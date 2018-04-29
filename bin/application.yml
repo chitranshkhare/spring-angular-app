@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    include:
+    - dev
+
+application-properties:
+  internal-system:
+    environment-type:
