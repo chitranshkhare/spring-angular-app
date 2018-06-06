@@ -12,7 +12,7 @@ public class CommonController {
 	
 	@GetMapping("/go")
 	public String go() {
-		List<String> cars = List.of("A", "B", "C", "D", "E", "F");
+		List<String> cars = List.of("A", "B", "C", "D", "E", "F", "G");
 		
 		return GsonUtils.toJsonList(cars);
 	}
