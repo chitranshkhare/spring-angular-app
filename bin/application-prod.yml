@@ -1,3 +1,11 @@
+spring:
+  jpa:
+    database: update
+  datasource: 
+    url: mysql://localhost:3306/quater
+    username: root
+    password: root
+    
 application-properties:
   internal-system:
     environment-type: prop
