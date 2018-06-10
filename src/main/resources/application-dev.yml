@@ -1,10 +1,15 @@
 spring:
   jpa:
-    database: update
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    show-sql: true   
   datasource: 
-    url: mysql://localhost:3306/quater
+    url: jdbc:mysql://localhost:3306/lbs
     username: root
     password: root
+    
+    
 
 application-properties:
   internal-system:

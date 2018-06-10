@@ -20,7 +20,7 @@ public interface UserService {
 
 	Iterable<User> findAll(User user);
 
-	Iterable<Book> findAllBookByUserID(Long userId);
+	Iterable<Book> findAllBookByUserId(Long userId);
 
 	Optional<Book> findByIdAndBookId(Long userId, Long bookId);
 

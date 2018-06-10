@@ -8,6 +8,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -49,7 +50,66 @@ public class Book implements Serializable {
 	@Column(name = "photo", nullable = false, length = 255)
 	private String photo;
 	
-	@ManyToMany(mappedBy="books", cascade=CascadeType.ALL)
-	Set<User> users = new HashSet<>();
+	@Column(name = "quantity_left", nullable = false)
+	private Integer quantityLeft;
+	
+//	@ManyToMany(mappedBy="books", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+//	Set<User> users = new HashSet<>();
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAuther() {
+		return auther;
+	}
+
+	public void setAuther(String auther) {
+		this.auther = auther;
+	}
+
+	public Boolean getIsAvailable() {
+		return isAvailable;
+	}
+
+	public void setIsAvailable(Boolean isAvailable) {
+		this.isAvailable = isAvailable;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public Integer getQuantityLeft() {
+		return quantityLeft;
+	}
+
+	public void setQuantityLeft(Integer quantityLeft) {
+		this.quantityLeft = quantityLeft;
+	}
+
+//	public Set<User> getUsers() {
+//		return users;
+//	}
+//
+//	public void setUsers(Set<User> users) {
+//		this.users = users;
+//	}
 
 }

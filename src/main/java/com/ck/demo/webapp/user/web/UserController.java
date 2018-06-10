@@ -1,4 +1,4 @@
-package com.ck.demo.webapp.user.controller;
+package com.ck.demo.webapp.user.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,29 +10,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ck.demo.webapp.book.domin.Book;
-import com.ck.demo.webapp.book.service.BookService;
 import com.ck.demo.webapp.user.domin.User;
 import com.ck.demo.webapp.user.service.UserService;
 
 @RestController
-@RequestMapping("/users/{userId}/book")
-public class UserBookController {
+@RequestMapping("/users")
+public class UserController {
 	
 	@Autowired
 	private UserService userService; 
 	
-//	@Autowired
-//	private BookService bookService;
-	
 	@GetMapping
-	public Iterable<Book> get(@PathVariable("userId") Long userId) {
-		return userService.findAllBookByUserID(userId);
+	public Iterable<User> get(@RequestParam(required=false) User user) {
+		return userService.findAll(user);
 	}
 	
-	@GetMapping("/{bookId}")
-	public Book get(@PathVariable("userId") Long userId, @PathVariable("bookId") Long bookId) {
-		return userService.findByIdAndBookId(userId, bookId).orElse(new Book ());
+	@GetMapping("/{id}")
+	public User get(@PathVariable("id") Long id) {
+		return userService.findById(id).orElse(new User());
 	}
 	
 	@PostMapping
@@ -45,9 +40,9 @@ public class UserBookController {
 		
 	}
 	
-	/*@DeleteMapping("/{id}")
+	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Long id) {
 		userService.delete(id);
-	}*/
+	}
 
 }

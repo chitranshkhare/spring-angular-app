@@ -9,8 +9,8 @@ import com.ck.demo.webapp.user.domin.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
-	Iterable<Book> findBooksByID(Long userId);
+	Iterable<Book> findBooksById(Long userId);
 
-	Optional<Book> findByBooksBookId(Long bookId);
+//	Optional<Book> findByBooksBookId(Long bookId);
 
 }
