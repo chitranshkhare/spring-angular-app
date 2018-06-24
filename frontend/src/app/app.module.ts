@@ -10,6 +10,7 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UserService } from './users/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './common/component/spinner/spinner/spinner.component';
 
 const appRoutes: Routes = [
   { path: 'user-list', component: UserListComponent },
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     UserListComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

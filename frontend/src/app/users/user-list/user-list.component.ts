@@ -11,12 +11,14 @@ import { User } from '../user';
 export class UserListComponent implements OnInit {
 
   users: User[];
+  showSpinner: boolean = true;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getAll().subscribe(u => { 
       this.users = u;
+      this.showSpinner = false;
     });
   }
 
