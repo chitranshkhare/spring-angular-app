@@ -21,9 +21,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Iterable<User> findAll(User user) {
-		
-		userRepository.findAll().forEach(System.out::println);
-		
 		return userRepository.findAll();
 	}
 	
@@ -64,6 +61,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Optional<Book> findByIdAndBookId(Long userId, Long bookId) {
 		return null;/*userRepository.findByBooksBookId(bookId);*/
+	}
+
+	@Override
+	public Iterable<User> findAllByName(String name) {
+		return userRepository.findAllByNameContainingIgnoreCase(name);
 	}
 
 }

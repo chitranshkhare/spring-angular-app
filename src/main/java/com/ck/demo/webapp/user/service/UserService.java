@@ -24,4 +24,6 @@ public interface UserService {
 
 	Optional<Book> findByIdAndBookId(Long userId, Long bookId);
 
+	Iterable<User> findAllByName(String name);
+
 }
